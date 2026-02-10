@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function showEffects() {
-        // Change character to second.png
-        character.src = 'assets/second.png';
+        // Change character to after.png
+        character.src = 'assets/after.png';
         
         // Activate light beam
         setTimeout(() => {
@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function hideEffects() {
-        // Change character back to first.jpg
-        character.src = 'assets/first.jpg';
+        // Change character back to before.png
+        character.src = 'assets/before.png';
         
         // Hide light beam
         lightBeam.classList.remove('active');
@@ -149,8 +149,8 @@ function handleTrigger(e) {
 }
 
 function showEffects() {
-    // Change character to second.png
-    character.src = 'assets/second.png';
+    // Change character to after.png
+    character.src = 'assets/after.png';
     
     // Activate light beam
     setTimeout(() => {
@@ -171,8 +171,8 @@ function showEffects() {
 }
 
 function hideEffects() {
-    // Change character back to first.jpg
-    character.src = 'assets/first.jpg';
+    // Change character back to before.png
+    character.src = 'assets/before.png';
     
     // Hide light beam
     lightBeam.classList.remove('active');
