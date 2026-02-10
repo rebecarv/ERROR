@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something Here - Space Trigger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Starry Background -->
+    <div class="stars"></div>
+    
+    <!-- Text that fades in -->
+    <div class="text-container">
+        <div class="text-line" id="textSomething">something</div>
+        <div class="text-line" id="textHere">here</div>
+    </div>
+    
+    <!-- Earth with light beam -->
+    <div class="earth-container">
+        <img src="assets/earth.png" alt="Earth" class="earth">
+        <img src="assets/first.jpg" alt="Character" class="character" id="character">
+        <div class="light-beam" id="lightBeam"></div>
+    </div>
+    
+    <!-- Lever Trigger -->
+    <form class="lever-form">
+        <input type="checkbox" name="lever" class="lever pristine" id="lever" value="lever value" role="switch" aria-label="lever" aria-checked="false">
+        <label for="lever"><span>On</span></label>
+        <label for="lever"><span>Off</span></label>
+    </form>
+    
+    <!-- Audio elements -->
+    <audio id="triggerSound" preload="auto">
+        <!-- Add your trigger sound file here -->
+        <source src="assets/trigger-sound.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="backgroundSong" preload="auto" loop>
+        <!-- Add your background song file here -->
+        <source src="assets/background-song.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="constantSound" preload="auto" loop>
+        <!-- Add your constant sound file here -->
+        <source src="assets/constant-sound.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
