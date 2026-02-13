@@ -3,47 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Something Here - Space Trigger</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ERROR 404: FRIENDSHIP_NOT_FOUND</title>
+    <style>
+        /* Windows 98 vaporwave aesthetic */
+        :root {
+            --win-gray: #c0c0c0;
+            --win-blue: #000080;
+            --win-dark: #808080;
+            --win-light: #ffffff;
+        }
+
+        body {
+            background-color: #008080; /* Classic teal */
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            cursor: url('https://w95.js.org/img/cursors/auto.png'), auto;
+        }
+
+        /* Classic windows */
+        .window {
+            width: 400px;
+            max-width: 100%;
+            box-sizing: border-box;
+            background: var(--win-gray);
+            border-top: 2px solid var(--win-light);
+            border-left: 2px solid var(--win-light);
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+        }
+
+        .title-bar {
+            background: linear-gradient(90deg, var(--win-blue), #1084d0);
+            padding: 4px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: grab;
+        }
+
+        .controls button {
+            background: var(--win-gray);
+            border: 1px solid #000;
+            box-shadow: inset 1px 1px #fff;
+            width: 20px;
+            height: 20px;
+            font-weight: bold;
+            line-height: 16px;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .btn-retro {
+            background: var(--win-gray);
+            border-top: 2px solid var(--win-light);
+            border-left: 2px solid var(--win-light);
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
+            padding: 10px 20px;
+            font-family: inherit;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        
+        .btn-retro:active {
+            border-top: 2px solid #000;
+            border-left: 2px solid #000;
+            border-right: 2px solid var(--win-light);
+            border-bottom: 2px solid var(--win-light);
+        }
+
+        /* Images and memes */
+        img.meme {
+            max-width: 100%;
+            border: 2px inset var(--win-dark);
+            margin-bottom: 10px;
+        }
+
+        /* Glitch animation at the end - subtle */
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { filter: hue-rotate(360deg); transform: scale(1); }
+        }
+
+        .party-mode {
+            animation: rainbow 4s infinite linear;
+        }
+
+        /* Desktop icons */
+        .desktop-icons {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 1;
+        }
+
+        .icon {
+            color: white;
+            text-align: center;
+            width: 80px;
+            cursor: pointer;
+            text-shadow: 1px 1px #000;
+        }
+        
+        .icon-img {
+            width: 40px;
+            height: 40px;
+            background: pink;
+            margin: 0 auto 5px;
+            border: 1px solid #fff;
+        }
+
+        #finalMessage {
+            display: none;
+            font-size: clamp(1.25rem, 5vw, 2rem);
+            color: yellow;
+            text-shadow: 4px 4px #ff0000;
+            z-index: 1000;
+            background: rgba(0,0,0,0.8);
+            padding: clamp(12px, 4vw, 20px);
+            border: 5px dashed yellow;
+            max-width: 90vw;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* Tablet */
+        @media (max-width: 768px) {
+            .window {
+                width: min(400px, 92vw);
+                max-width: 92vw;
+            }
+            .content {
+                padding: 14px;
+            }
+            .content p {
+                font-size: 0.95rem;
+            }
+            .btn-retro {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            .desktop-icons {
+                top: 12px;
+                left: 12px;
+                gap: 14px;
+            }
+            .icon {
+                width: 64px;
+            }
+            .icon-img {
+                width: 32px;
+                height: 32px;
+            }
+            .icon span {
+                font-size: 0.8rem;
+            }
+            #mainWindow {
+                left: 50% !important;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Phone */
+        @media (max-width: 480px) {
+            body {
+                overflow-x: hidden;
+            }
+            .window {
+                width: 94vw;
+                max-width: 94vw;
+            }
+            .title-bar span {
+                font-size: 0.75rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                max-width: 180px;
+            }
+            .content {
+                padding: 12px;
+            }
+            .content p {
+                font-size: 0.85rem;
+                margin: 0.4em 0;
+            }
+            .btn-retro {
+                padding: 10px 14px;
+                font-size: 0.85rem;
+                margin-top: 10px;
+                width: 100%;
+                max-width: 260px;
+            }
+            img.meme {
+                max-height: 120px;
+                object-fit: contain;
+            }
+            .desktop-icons {
+                top: 8px;
+                left: 8px;
+                gap: 12px;
+            }
+            .icon {
+                width: 56px;
+            }
+            .icon-img {
+                width: 28px;
+                height: 28px;
+            }
+            .icon span {
+                font-size: 0.7rem;
+            }
+            #mainWindow {
+                top: 22% !important;
+                left: 50% !important;
+                transform: translateX(-50%);
+            }
+            #finalMessage span {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Starry Background -->
-    <div class="stars"></div>
-    
-    <!-- Text that fades in -->
-    <div class="text-container">
-        <div class="text-line" id="textSomething">something</div>
-        <div class="text-line" id="textHere">here</div>
+
+    <div class="desktop-icons">
+        <div class="icon" onclick="openWindow('pasta')">
+            <div class="icon-img" style="background:url('https://cdn-icons-png.flaticon.com/512/3616/3616929.png') no-repeat center/contain;"></div>
+            <span>Secrets</span>
+        </div>
+        <div class="icon" onclick="crashSystem()">
+            <div class="icon-img" style="background:url('https://cdn-icons-png.flaticon.com/512/564/564619.png') no-repeat center/contain;"></div>
+            <span>DO NOT CLICK</span>
+        </div>
     </div>
-    
-    <!-- Earth with light beam -->
-    <div class="earth-container">
-        <img src="assets/earth.png" alt="Earth" class="earth">
-        <img src="assets/before.png" alt="Character" class="character" id="character">
-        <div class="light-beam" id="lightBeam"></div>
+
+    <div class="window" id="mainWindow" style="top: 30%; left: 35%;">
+        <div class="title-bar">
+            <span>System32_Bestie.ex[e]</span>
+            <div class="controls">
+                <button onclick="minimize()">_</button>
+                <button onclick="crashSystem()">X</button>
+            </div>
+        </div>
+        <div class="content">
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGVpNTRtdndyYWd5dnNwdWtnZHptZjU5ZG1tdDlydmJ1MTJvODc3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hUpbzZJFkaHLTowiyv/giphy.gif" alt="Cat typing" class="meme">
+            <p>SECURITY WARNING:</p>
+            <p>We detected high levels of "Nate" in this user.</p>
+            <p>Sending virtual hugs to wherever the hell you are.</p>
+            <button class="btn-retro" onclick="startChaos()">Receive Packet</button>
+            <button class="btn-retro" onclick="alert('I have a lot of questions. Number one: how dare you?')">Ñãõ</button>
+        </div>
     </div>
-    
-    <!-- Lever Trigger -->
-    <form class="lever-form">
-        <input type="checkbox" name="lever" class="lever pristine" id="lever" value="lever value" role="switch" aria-label="lever" aria-checked="false">
-        <label for="lever"><span>On</span></label>
-        <label for="lever"><span>Off</span></label>
-    </form>
-    
-    <!-- Audio elements -->
-    <audio id="triggerSound" preload="auto">
-        <!-- Add your trigger sound file here -->
-        <source src="assets/trigger-sound.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="backgroundSong" preload="auto" loop>
-        <!-- Add your background song file here -->
-        <source src="assets/background-song.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="constantSound" preload="auto" loop>
-        <!-- Add your constant sound file here -->
-        <source src="assets/constant-sound.mp3" type="audio/mpeg">
-    </audio>
-    
-    <script src="script.js"></script>
+
+    <div id="finalMessage">
+        HAPPY (very) BELATED BIRTHDAY, YOU HOT DOG! ❤️<br>
+        <span style="font-size: 1rem; color: white;">(25 looks good on you!)</span>
+    </div>
+
+    <script>
+        // Sounds
+        const errorSound = new Audio('https://www.myinstants.com/media/sounds/windows-xp-error.mp3');
+        const tadaSound = new Audio('https://www.myinstants.com/media/sounds/tada_1.mp3');
+
+        function startChaos() {
+            // Toca som de erro
+            errorSound.play();
+            
+            // Change button text
+            const btn = document.querySelector('.btn-retro');
+            btn.innerText = "LOADING VIRUS...";
+            
+            // Spawn random error windows
+            let count = 0;
+            const interval = setInterval(() => {
+                spawnErrorWindow();
+                errorSound.cloneNode(true).play();
+                count++;
+                if(count > 10) {
+                    clearInterval(interval);
+                    showFinalReveal();
+                }
+            }, 300);
+        }
+
+        function spawnErrorWindow() {
+            const win = document.createElement('div');
+            win.className = 'window';
+            
+            // Random position
+            const x = Math.random() * (window.innerWidth - 300);
+            const y = Math.random() * (window.innerHeight - 200);
+            
+            win.style.left = x + 'px';
+            win.style.top = y + 'px';
+            win.style.width = '250px';
+            
+            win.innerHTML = `
+                <div class="title-bar" style="background: red;">
+                    <span>FATAL ERROR</span>
+                    <div class="controls"><button>X</button></div>
+                </div>
+                <div class="content">
+                    <p>The system cannot handle so much sexiness.</p>
+                    <button class="btn-retro">OK</button>
+                </div>
+            `;
+            
+            document.body.appendChild(win);
+        }
+
+        function showFinalReveal() {
+            setTimeout(() => {
+                // Clear all windows
+                document.querySelectorAll('.window').forEach(w => w.remove());
+                
+                // Party background
+                document.body.style.background = "url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExejFyOHlzOGkwYzIya3ZqdG9jcWxxNHk3dGI4dTQzZGF1YXNmeXVqZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0MYt5jPR6QX5pnqM/giphy.gif')";
+                document.body.style.backgroundSize = "cover";
+                
+                // Show message
+                const msg = document.getElementById('finalMessage');
+                msg.style.display = 'block';
+                msg.classList.add('party-mode');
+                
+                tadaSound.play();
+            }, 1000);
+        }
+
+        function crashSystem() {
+            alert("Now you owe me a (homemade) pizza!");
+        }
+        
+        function minimize() {
+            alert("Minimize our bestie-ship? Never.");
+        }
+        
+        function openWindow(name) {
+            alert("I miss the shit out of you!");
+        }
+    </script>
 </body>
 </html>
